@@ -20,11 +20,11 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
   end
 
   def update
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
 
     if @board.update(board_params)
       redirect_to '/', notice: '編輯看板成功'
@@ -34,7 +34,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params[:id])
+    # @board = Board.find(params[:id])
 
     @board if @board.destroy
     redirect_to '/', notice: '刪除成功'
