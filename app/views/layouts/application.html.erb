@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to '首頁', root_path %></li>
+        <li><%= link_to '看板標題', boards_path %></li>
+      </ul>
+    </nav>
+
+    <%= notice %>
     <%= yield %>
   </body>
 </html>
