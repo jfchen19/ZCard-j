@@ -1,0 +1,15 @@
+<h1>會員登入</h1>
+
+<%= form_for(@user, url: sessions_path , method: 'post') do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <%= form.submit '登入' %>
+<% end %>
