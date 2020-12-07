@@ -1,3 +1,12 @@
+<!-- 當初錯的時候顯示錯誤訊息 -->
+<% if @board.errors.any?%>
+  <ul>
+    <% @board.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for(board) do |form| %>
 
   <%= form.label :title, '標題' %>
