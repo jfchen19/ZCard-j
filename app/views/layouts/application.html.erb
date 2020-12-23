@@ -10,21 +10,7 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to '首頁', root_path %></li>
-        <li><%= link_to '看板標題', boards_path %></li>
-      </ul>
-      <ul>
-        <% if session[:user9527].present? %>
-        <li><%= User.find_by(email: session[:user9527]).nickname %></li>   <!-- 不要在view直接撈資料 -->
-        <li><%= link_to '登出', '#' %></li>
-        <% else %>
-        <li><%= link_to '註冊', users_sign_up_path %></li>
-        <li><%= link_to '登入', session_path %></li>
-      </ul>
-      <% end %>
-    </nav>
+    <%= render '/shared/navbar' %>
 
     <%= notice %>
     <%= yield %>
