@@ -1,18 +1,15 @@
 module SessionsHelper
   def current_user
     if session[:user9527].present?
-      @user ||= User.find_by(email: session[:user9527])
-      # or= 沒有前面的@user的話就找後面User...，找到後指定給前面的@user，以減少瀏覽器多次撈取使用者資料的次數
+      @_user9487 ||= User.find_by(id: session[:user9527])
+      # ||= (or=) 沒有前面的@user的話就找後面User...，找到後指定給前面的@user，以減少瀏覽器多次撈取使用者資料的次數
       # 但是每一次換頁面，還是會重新撈取一次資料，因為http是沒有狀態的
     else
       nil
     end
   end
 end
-
-
-
-
+ 
 # turbolinks
 
 # ujs? 非侵入式javascript => 很重要

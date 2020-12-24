@@ -16,6 +16,13 @@ class RegistrationsController < ApplicationController
   def edit
   end
 
+  def update
+    if current_user.update(user_params)
+      redirect_to edit_users_path, notice: '資料更新成功'
+    else
+      #
+    end
+  end
 
   private
   def user_params
