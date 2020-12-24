@@ -6,10 +6,10 @@
   <ul>
     <% if current_user %>
     <li><%= current_user.nickname %></li>   <!-- 不要在view直接撈資料 -->
-    <li><%= link_to '登出', logout_path, method: 'delete' %></li>
+    <li><%= link_to '登出', sign_out_users_path, method: 'delete' %></li>
     <% else %>
-    <li><%= link_to '註冊', users_sign_up_path %></li>
-    <li><%= link_to '登入', session_path %></li>
+    <li><%= link_to '註冊', sign_up_users_path %></li>
+    <li><%= link_to '登入', sign_in_users_path %></li>
   </ul>
   <% end %>
 </nav>
