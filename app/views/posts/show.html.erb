@@ -1,0 +1,12 @@
+<h2><%= @post.user.nickname %></h2>
+<h1><%= @post.title %></h1>
+
+<%# <%= if current_user.own?(@post) %>
+<%# <%= if @post.user == current_user %>
+<%= link_to '編輯', edit_post_path(@post) if @post.owned_by?(current_user)%>
+
+<article>
+  <%= simple_format(@post.content) %>
+</article>
+
+<%= link_to '回上一頁', :back %>

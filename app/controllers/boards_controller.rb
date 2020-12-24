@@ -8,7 +8,6 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-
     # begin   # 如果成功找到，走這一條
     #   @board = Board.find(params[:id])
     # # @board = Board.find_by(params[:id])
@@ -16,6 +15,11 @@ class BoardsController < ApplicationController
     # rescue  # 如果失敗的話畫面不要出錯，就走這一條
     #   redirect_to root_path, notice: '找不到該頁面！'
     # end
+
+    # @posts = Post.where(board: @board)
+    # @posts = Post.where(board_id: @board.id)
+    # desc: 資料反向
+    @posts = @board.posts.order(id: :desc)
   end
 
   def new 
