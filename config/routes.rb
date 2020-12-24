@@ -12,6 +12,13 @@ Rails.application.routes.draw do
     delete '/sign_out', action: 'destroy'
   end
 
-  resources :boards
+  resources :boards do
+    resources :posts, shallow: true
+  end
+  # 上三行 = 下四行
+  # resources :boards do
+  #   resources :posts, only:[:index, :new, :create]
+  # end
+  # resources :posts, only: [:show, :edit, :update, :destroy]
 
 end
