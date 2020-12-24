@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   before_create :encrypt_password
 
+  has_many :posts
+
   def self.login(user)
     pw = Digest::SHA1.hexdigest("a#{user[:password]}z")
     User.find_by(email: user[:email], password: pw)
