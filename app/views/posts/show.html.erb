@@ -10,3 +10,17 @@
 </article>
 
 <%= link_to '回上一頁', :back %>
+
+<%= form_for(@comment, url: post_comments_path(@post)) do |f| %>
+  <%= f.text_area :content, placeholder: '請輸入留言'%>
+  <%= f.submit '送出' %>
+<% end %>
+
+<ul>
+<% @comments.each do |comment|%>
+  <li>
+    [<%= comment.user.nickname %>]
+    <%= comment.content %>
+  </li>
+<% end %>
+</ul>

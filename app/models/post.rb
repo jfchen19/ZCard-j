@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :board   # 此model會有board方法
   belongs_to :user    # 此model會有user方法
+  has_many :comments
 
   validates :title, presence: true
   validates :content, presence: true

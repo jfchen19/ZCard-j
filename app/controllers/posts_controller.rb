@@ -31,6 +31,8 @@ class PostsController < ApplicationController
 
   def show
     # @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.order(id: :desc)  # 特定的某一篇post會有許多comments，並且順序顛倒（新的在上舊的在下）
   end
 
   def edit

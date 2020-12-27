@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   # end
   # resources :posts, only: [:show, :edit, :update, :destroy]
 
+  resources :posts, only:[] do
+    resources :comments, shallow: true, only: [:create, :destroy]   # 刪除時並不需要知道post id, 只需要知道comment id
+  end
+
 end
